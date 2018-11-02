@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<form action="{{url_for('delete') }}" method="post">
+        <input type="hidden" name ="method" value="DELETE">
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </form>
+	<form method="POST" enctype="multipart/form-data" action="/articles">
+		<select id = "sel_modd" name="sel_mod" class = "form-control"/>
+        <option value="{{models[0]}}" selected>{{models[0]}}</option>
+        {% for md in models[1:] %}
+        	<option value="{{md}}">{{md}}</option>
+        {% endfor %} 
+        </select>
+  		<input type="file" name="files" multiple="">
+  		<input type="submit" value="submit">
+	</form>
+{% endblock %}

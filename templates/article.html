@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Dashboard <small> Welcome {{session.username}}</small></h1>
+    <a class="btn btn-success" href="/add_article">Add Article</a>
+    <hr>
+    <h2>Bag of Words</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Classifier Name</th>
+            <th>Predicted Group</th>
+        </tr>
+            <tr>
+                <td>SVM</td>
+                <td>{{preditions[0]}}</td>
+            </tr>
+            <tr>
+                <td>Naive Bayes</td>
+                <td>{{preditions[1]}}</td>
+            </tr>
+            <tr>
+                <td>k Nearest Neighbours</td>
+                <td>{{preditions[2]}}</td>
+            </tr>
+            <tr>
+                <td>CNN</td>
+                <td>{{preditions[3]}}</td>
+            </tr>
+    </table>
+    <h2>N grams</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Classifier Name</th>
+            <th>Predicted Group</th>
+        </tr>
+            <tr>
+                <td>SVM</td>
+                <td>{{preditions[4]}}</td>
+            </tr>
+            <tr>
+                <td>Naive Bayes</td>
+                <td>{{preditions[5]}}</td>
+            </tr>
+            <tr>
+                <td>k Nearest Neighbours</td>
+                <td>{{preditions[6]}}</td>
+            </tr>
+            <tr>
+                <td>CNN</td>
+                <td>{{preditions[7]}}</td>
+            </tr>
+    </table>
+{% endblock %}
